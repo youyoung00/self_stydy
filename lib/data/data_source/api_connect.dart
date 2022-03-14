@@ -16,18 +16,20 @@ class DictionaryApi {
       final response = await client.get(
         Uri.parse('$baseUrl?key=$key&req_type=json&q=$query'),
       );
-      print(11111111111);
-      print(response);
-      Map<String, dynamic> jsonResponse = jsonDecode(response.body);
-      print(222222222222);
-      print(jsonResponse);
-      Iterable hits = jsonResponse['channel']['item'];
 
-      print(333333333333);
-      print(hits);
-      return Result.success(hits);
+      // if (response.statusCode != 200) {
+      //   print('$runtimeType.getWordList() : ${response.statusCode}');
+      //   return Result.error(
+      //       '$runtimeType.getWordList() : ${response.statusCode}');
+      // }
+
+      Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+
+      Iterable item = jsonResponse['channel']['item'];
+      return Result.success(item);
     } catch (e) {
-      return const Result.error('네트워크 에러');
+      print('$runtimeType.getWordList() : $e');
+      return Result.error('네트워크 에러 $e');
     }
   }
 }

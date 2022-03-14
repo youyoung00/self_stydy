@@ -9,15 +9,15 @@ class GetInfosUseCase {
 
   Future<Result<List<Info>>> call(String query) async {
     final result = await repository.fetch(query);
-    print("333333333333333");
-    print(result);
 
-    return result.when(success: (infos) {
-      print("121212121212121");
-      print(infos[0]);
-      return Result.success(infos);
-    }, error: (message) {
-      return Result.error(message);
-    });
+    return result.when(
+      success: (infos) {
+        return Result.success(infos);
+      },
+      error: (message) {
+        print('$runtimeType.GetInfosUseCase');
+        return Result.error(message);
+      },
+    );
   }
 }

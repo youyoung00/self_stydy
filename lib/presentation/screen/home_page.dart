@@ -45,8 +45,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final viewModel = context.watch<HomeViewModel>();
     final state = viewModel.state;
-    print("77777777777777");
-    print(state.infos.length);
+    // print("77777777777777");
+    // print(state.infos.length);
 
     return Scaffold(
       appBar: AppBar(
@@ -72,8 +72,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 suffixIcon: IconButton(
                   onPressed: () async {
-                    print("888888888888888888888");
-                    print(_controller.text);
+                    // print("888888888888888888888");
+                    // print(_controller.text);
                     viewModel.fetch(_controller.text);
                   },
                   icon: const Icon(Icons.search),
