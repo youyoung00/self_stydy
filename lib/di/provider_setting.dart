@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:self_study/data/api_connect.dart';
+import 'package:self_study/data/data_source/api_connect.dart';
 
 import '../data/repository/info_api_repository_impl.dart';
 import '../domain/repository/info_api_repository.dart';

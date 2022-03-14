@@ -1,4 +1,4 @@
-import '../../data/result.dart';
+import '../../data/data_source/result.dart';
 import '../model/info.dart';
 import '../repository/info_api_repository.dart';
 

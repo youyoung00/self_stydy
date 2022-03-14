@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 
-import '../../data/result.dart';
+import '../../data/data_source/result.dart';
 import '../../domain/model/info.dart';
 import '../../domain/usecase/get_infos_use_case.dart';
 import 'home_states.dart';
@@ -24,7 +24,7 @@ class HomeViewModel with ChangeNotifier {
   Future<void> fetch(String query) async {
     _state = state.copyWith(isLoading: true);
     notifyListeners();
-    final Result<List<Info>> result = await getInfosUseCase(query);
+    final Result<List<Info>> result = await getInfosUseCase.call(query);
     print("55555555555555");
     print(result);
     result.when(

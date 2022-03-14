@@ -1,5 +1,5 @@
-import 'package:self_study/data/api_connect.dart';
-import 'package:self_study/data/result.dart';
+import 'package:self_study/data/data_source/api_connect.dart';
+import 'package:self_study/data/data_source/result.dart';
 import 'package:self_study/domain/model/info.dart';
 
 import '../../domain/repository/info_api_repository.dart';
