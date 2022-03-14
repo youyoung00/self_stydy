@@ -84,15 +84,9 @@ class _HomePageState extends State<HomePage> {
           state.isLoading
               ? const CircularProgressIndicator()
               : Expanded(
-                  child: GridView.builder(
+                  child: ListView.builder(
                     padding: const EdgeInsets.all(16.0),
                     itemCount: state.infos.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                    ),
                     itemBuilder: (context, index) {
                       final info = state.infos[index];
                       return InfoWidget(info: info);

@@ -12,8 +12,14 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      info.word.toString(),
+    return Column(
+      children: [
+        ListTile(
+          title: Text(info.sense['definition'].toString()),
+          leading: Text("<${info.word}> 의미 ${info.supNo} : "),
+        ),
+        const Divider(),
+      ],
     );
   }
 }
